@@ -15,6 +15,8 @@
 #include "synchconsole.h"
 #include "ksyscallhelper.h"
 #include <stdlib.h>
+#include <cstdint>   // For C++11 and later, or
+#include <stdint.h>  // For C++98/03
 
 void SysHalt() { kernel->interrupt->Halt(); }
 
