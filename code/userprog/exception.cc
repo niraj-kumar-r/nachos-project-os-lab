@@ -208,6 +208,22 @@ void handle_SC_PrintString() {
     return move_program_counter();
 }
 
+void handle_SC_PrintStringUC() {
+    int memPtr = kernel->machine->ReadRegister(4);  // read address of C-string
+    char* buffer = stringUser2System(memPtr);
+    int length = strlen(buffer);
+    // convert to uppercase
+    for (int i = 0; i < length; i++) {
+        if (buffer[i] > 'a' && buffer[i] < 'z') {
+            buffer[i] -= 32;
+        }
+    }
+
+    SysPrintString(buffer, length);
+    delete[] buffer;
+    return move_program_counter();
+}
+
 void handle_SC_CreateFile() {
     int virtAddr = kernel->machine->ReadRegister(4);
     char* fileName = stringUser2System(virtAddr);
@@ -461,6 +477,8 @@ void ExceptionHandler(ExceptionType which) {
                     return handle_SC_Signal();
                 case SC_GetPid:
                     return handle_SC_GetPid();
+                case SC_PrintStringUC:
+                    return handle_SC_PrintStringUC();
                 /**
                  * Handle all not implemented syscalls
                  * If you want to write a new handler for syscall:

@@ -8,5 +8,6 @@ int main() {
     int result = Add(1, 2);
     /* Don't need to Halt() anymore because the PC will increase automatically
      */
+
     result = Add(2, 3);
 }
