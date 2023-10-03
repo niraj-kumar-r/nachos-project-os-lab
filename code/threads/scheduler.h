@@ -12,6 +12,7 @@
 #include "copyright.h"
 #include "list.h"
 #include "thread.h"
+#include <queue>
 
 // The following class defines the scheduler/dispatcher abstraction --
 // the data structures and operations needed to keep track of which
@@ -32,13 +33,22 @@ class Scheduler {
                                 // running needs to be deleted
     void Print();               // Print contents of ready list
 
+    void Sleep(Thread* thread, int ticks);
+    void WakeUp();
+
     // SelfTest for scheduler is implemented in class Thread
 
    private:
     List<Thread*>* readyList;  // queue of threads that are ready to run,
                                // but not running
-    Thread* toBeDestroyed;     // finishing thread to be destroyed
-                               // by the next thread that runs
+    List<Thread*>* sleepList;  // queue of threads that are sleeping
+                               // but not running
+
+    Thread* toBeDestroyed;  // finishing thread to be destroyed
+                            // by the next thread that runs
+    priority_queue<pair<int, Thread*>, vector<pair<int, Thread*>>,
+                   greater<pair<int, Thread*>>>
+        pq;
 };
 
 #endif  // SCHEDULER_H

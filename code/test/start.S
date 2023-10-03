@@ -282,6 +282,14 @@ GetPid:
 	j	$31
 	.end GetPid
 
+	.globl ThreadSleep
+	.ent	ThreadSleep
+ThreadSleep:
+	addiu $2,$0,SC_ThreadSleep
+	syscall
+	j	$31
+	.end ThreadSleep
+
 /* dummy function to keep gcc happy */
         .globl  __main
         .ent    __main

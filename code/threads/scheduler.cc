@@ -31,6 +31,7 @@
 
 Scheduler::Scheduler() {
     readyList = new List<Thread *>;
+    sleepList = new List<Thread *>;
     toBeDestroyed = NULL;
 }
 
@@ -39,7 +40,10 @@ Scheduler::Scheduler() {
 // 	De-allocate the list of ready threads.
 //----------------------------------------------------------------------
 
-Scheduler::~Scheduler() { delete readyList; }
+Scheduler::~Scheduler() {
+    delete readyList;
+    delete sleepList;
+}
 
 //----------------------------------------------------------------------
 // Scheduler::ReadyToRun
@@ -54,7 +58,7 @@ void Scheduler::ReadyToRun(Thread *thread) {
     DEBUG(dbgThread, "Putting thread on ready list: " << thread->getName());
 
     thread->setStatus(READY);
-    readyList->Append(thread);
+    if (!readyList->IsInList(thread)) readyList->Append(thread);
 }
 
 //----------------------------------------------------------------------
@@ -163,4 +167,33 @@ void Scheduler::CheckToBeDestroyed() {
 void Scheduler::Print() {
     cout << "Ready list contents:\n";
     readyList->Apply(ThreadPrint);
+}
+
+void Scheduler::Sleep(Thread *thread, int ticks) {
+    ASSERT(kernel->interrupt->getLevel() == IntOff);
+    DEBUG(dbgThread, "Putting thread to sleep: " << thread->getName());
+
+    thread->setStatus(BLOCKED);
+    thread->setTicksUntilWakeup(ticks);
+    // if present in readyList, remove it
+    if (readyList->IsInList(thread)) readyList->Remove(thread);
+    if (!sleepList->IsInList(thread)) sleepList->Append(thread);
+}
+
+void Scheduler::WakeUp() {
+    ASSERT(kernel->interrupt->getLevel() == IntOff);
+    DEBUG(dbgThread, "Waking up threads");
+
+    ListIterator<Thread *> *iter = new ListIterator<Thread *>(sleepList);
+    for (; !iter->IsDone(); iter->Next()) {
+        Thread *thread = iter->Item();
+        if (thread->getTicksUntilWakeup() == 0) {
+            sleepList->Remove(thread);
+            thread->setStatus(READY);
+            if (!readyList->IsInList(thread)) readyList->Append(thread);
+        } else {
+            thread->setTicksUntilWakeup(thread->getTicksUntilWakeup() - 1);
+        }
+    }
+    delete iter;
 }

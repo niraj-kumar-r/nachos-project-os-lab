@@ -158,6 +158,7 @@ void Interrupt::OneTick() {
                                  // (interrupt handlers run with
                                  // interrupts disabled)
     CheckIfDue(FALSE);           // check for pending interrupts
+    kernel->scheduler->WakeUp();
     ChangeLevel(IntOff, IntOn);  // re-enable interrupts
     if (yieldOnReturn) {         // if the timer device handler asked
                                  // for a context switch, ok to do it now

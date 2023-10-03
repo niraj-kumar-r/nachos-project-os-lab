@@ -50,6 +50,7 @@
 #define SC_GetPid 54
 // user defined
 #define SC_PrintStringUC 55
+#define SC_ThreadSleep 56
 
 #ifndef IN_ASM
 
@@ -213,6 +214,8 @@ int ThreadJoin(ThreadId id);
  * Deletes current thread and returns ExitCode to every waiting lokal thread.
  */
 void ThreadExit(int ExitCode);
+
+void ThreadSleep(int ticks);
 
 #endif /* IN_ASM */
 

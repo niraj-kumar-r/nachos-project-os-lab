@@ -107,6 +107,8 @@ class Thread {
 
     void CheckOverflow();  // Check if thread stack has overflowed
     void setStatus(ThreadStatus st) { status = st; }
+    void setTicksUntilWakeup(int ticks) { ticksUntilWakeup = ticks; }
+    int getTicksUntilWakeup() { return ticksUntilWakeup; }
     char *getName() { return (name); }
     void Print() { cout << name; }
     void SelfTest();  // test whether thread impl is working
@@ -118,6 +120,7 @@ class Thread {
                           // NULL if this is the main thread
                           // (If NULL, don't deallocate stack)
     ThreadStatus status;  // ready, running or blocked
+    int ticksUntilWakeup;
     char *name;
 
     void StackAllocate(VoidFunctionPtr func, void *arg);
