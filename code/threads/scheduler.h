@@ -46,8 +46,18 @@ class Scheduler {
 
     Thread* toBeDestroyed;  // finishing thread to be destroyed
                             // by the next thread that runs
+
+    struct CustomComparator {
+        bool operator()(const pair<int, Thread*>& a,
+                        const pair<int, Thread*>& b) {
+            // Compare the first elements of the pairs (the integers) in
+            // ascending order.
+            return a.first > b.first;
+        }
+    };
+
     priority_queue<pair<int, Thread*>, vector<pair<int, Thread*>>,
-                   greater<pair<int, Thread*>>>
+                   CustomComparator>
         pq;
 };
 

@@ -177,7 +177,9 @@ void Scheduler::Sleep(Thread *thread, int ticks) {
     thread->setTicksUntilWakeup(ticks);
     // if present in readyList, remove it
     if (readyList->IsInList(thread)) readyList->Remove(thread);
-    if (!sleepList->IsInList(thread)) sleepList->Append(thread);
+    if (!sleepList->IsInList(thread)) {
+        sleepList->Append(thread);
+    }
 }
 
 void Scheduler::WakeUp() {

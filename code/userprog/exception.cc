@@ -414,8 +414,8 @@ void handle_SC_ThreadSleep() {
     int ticks = kernel->machine->ReadRegister(4);
     IntStatus oldLevel = kernel->interrupt->SetLevel(IntOff);
     Thread* oldThread = kernel->currentThread;
-    kernel->scheduler->Run(kernel->scheduler->FindNextToRun(), false);
     kernel->scheduler->Sleep(oldThread, ticks);
+    kernel->scheduler->Run(kernel->scheduler->FindNextToRun(), false);
     (void)kernel->interrupt->SetLevel(oldLevel);
     return move_program_counter();
 }
