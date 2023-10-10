@@ -33,6 +33,14 @@ Scheduler::Scheduler() {
     readyList = new List<Thread *>;
     sleepList = new List<Thread *>;
     toBeDestroyed = NULL;
+    hasPriority = false;
+}
+
+Scheduler::Scheduler(bool priority) {
+    readyList = new List<Thread *>;
+    sleepList = new List<Thread *>;
+    toBeDestroyed = NULL;
+    hasPriority = priority;
 }
 
 //----------------------------------------------------------------------
@@ -58,7 +66,12 @@ void Scheduler::ReadyToRun(Thread *thread) {
     DEBUG(dbgThread, "Putting thread on ready list: " << thread->getName());
 
     thread->setStatus(READY);
-    if (!readyList->IsInList(thread)) readyList->Append(thread);
+    if (!hasPriority)
+        readyList->Append(thread);
+    else {
+        int priority = rand() % 100 + 1;
+        pq.push(make_pair(priority, thread));
+    }
 }
 
 //----------------------------------------------------------------------
@@ -72,10 +85,20 @@ void Scheduler::ReadyToRun(Thread *thread) {
 Thread *Scheduler::FindNextToRun() {
     ASSERT(kernel->interrupt->getLevel() == IntOff);
 
-    if (readyList->IsEmpty()) {
-        return NULL;
+    if (!hasPriority) {
+        if (readyList->IsEmpty()) {
+            return NULL;
+        } else {
+            return readyList->RemoveFront();
+        }
     } else {
-        return readyList->RemoveFront();
+        if (pq.empty()) {
+            return NULL;
+        } else {
+            Thread *thread = pq.top().second;
+            pq.pop();
+            return thread;
+        }
     }
 }
 
@@ -166,7 +189,18 @@ void Scheduler::CheckToBeDestroyed() {
 //----------------------------------------------------------------------
 void Scheduler::Print() {
     cout << "Ready list contents:\n";
-    readyList->Apply(ThreadPrint);
+    if (!hasPriority)
+        readyList->Apply(ThreadPrint);
+    else {
+        priority_queue<pair<int, Thread *>, vector<pair<int, Thread *>>,
+                       CustomComparator>
+            pq_copy = pq;
+        while (!pq_copy.empty()) {
+            cout << pq_copy.top().second->getName() << " ";
+            pq_copy.pop();
+        }
+        cout << endl;
+    }
 }
 
 void Scheduler::Sleep(Thread *thread, int ticks) {
@@ -176,6 +210,7 @@ void Scheduler::Sleep(Thread *thread, int ticks) {
     thread->setStatus(BLOCKED);
     thread->setTicksUntilWakeup(ticks);
     // if present in readyList, remove it
+
     if (readyList->IsInList(thread)) readyList->Remove(thread);
     if (!sleepList->IsInList(thread)) {
         sleepList->Append(thread);

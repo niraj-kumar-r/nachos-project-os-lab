@@ -13,6 +13,8 @@
 #include "list.h"
 #include "thread.h"
 #include <queue>
+#include <cstdlib>
+#include <cmath>
 
 // The following class defines the scheduler/dispatcher abstraction --
 // the data structures and operations needed to keep track of which
@@ -20,7 +22,8 @@
 
 class Scheduler {
    public:
-    Scheduler();   // Initialize list of ready threads
+    Scheduler();  // Initialize list of ready threads
+    Scheduler(bool priority);
     ~Scheduler();  // De-allocate ready list
 
     void ReadyToRun(Thread* thread);
@@ -36,9 +39,14 @@ class Scheduler {
     void Sleep(Thread* thread, int ticks);
     void WakeUp();
 
+    // void SetPriority(bool hasPriority) { this->hasPriority = hasPriority; }
+    bool GetPriority() { return hasPriority; }
+
     // SelfTest for scheduler is implemented in class Thread
 
    private:
+    bool hasPriority;
+
     List<Thread*>* readyList;  // queue of threads that are ready to run,
                                // but not running
     List<Thread*>* sleepList;  // queue of threads that are sleeping
