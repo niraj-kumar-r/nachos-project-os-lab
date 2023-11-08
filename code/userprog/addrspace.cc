@@ -105,7 +105,6 @@ AddrSpace::~AddrSpace() {
 AddrSpace::AddrSpace(char *fileName) {
     OpenFile *executable = kernel->fileSystem->Open(fileName);
     NoffHeader noffH;
-    kernel->currentThread->executable = executable;
     unsigned int i, size, j, offset;
     unsigned int numCodePage,
         numDataPage;  // số trang cho phần code và phần initData
@@ -123,6 +122,7 @@ AddrSpace::AddrSpace(char *fileName) {
         (WordToHost(noffH.noffMagic) == NOFFMAGIC))
         SwapHeader(&noffH);
     ASSERT(noffH.noffMagic == NOFFMAGIC);
+    kernel->currentThread->executable = executable;
     kernel->currentThread->noffH = noffH;
     kernel->addrLock->P();
     // how big is address space?

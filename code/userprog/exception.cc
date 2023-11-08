@@ -481,14 +481,16 @@ void ExceptionHandler(ExceptionType which) {
             DEBUG(dbgSys, "Switch to system mode\n");
             break;
         case PageFaultException: {
-            int badVAdrr = kernel->machine->ReadRegister(BadVAddrReg);
+            int badVAdrr = kernel->machine->ReadRegister(39);
             DEBUG(dbgSys, "PageFaultException: " << badVAdrr << "\n");
-            handle_PageFault(badVAdrr);
-            break;
+            return handle_PageFault(badVAdrr);
         }
         case ReadOnlyException:
         case BusErrorException:
-        case AddressErrorException:
+        case AddressErrorException: {
+            DEBUG(dbgSys, "Error " << which << " occurs\n");
+            break;
+        }
         case OverflowException:
         case IllegalInstrException:
         case NumExceptionTypes:
