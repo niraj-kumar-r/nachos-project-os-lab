@@ -57,7 +57,10 @@
 /* The system call interface.  These are the operations the Nachos
  * kernel needs to support, to be able to run user programs.
  *
- * Each of these is invoked by a user program by simply calling the
+ * Each of these is invoked by a user program by simply calling thegit log
+ --pretty=format:'"%h","%an","%ad","%s",' --date=format-local:%d/%m/%y
+ --shortstat --no-merges | paste - - - > log.csv
+
  * procedure; an assembly language stub stuffs the system call code
  * into a register, and traps to the kernel.  The kernel procedures
  * are then invoked in the Nachos kernel, after appropriate error checking,

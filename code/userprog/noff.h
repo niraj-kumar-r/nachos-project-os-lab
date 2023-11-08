@@ -1,3 +1,5 @@
+#ifndef NOFF_H
+#define NOFF_H
 /* noff.h
  *     Data structures defining the Nachos Object Code Format
  *
@@ -27,3 +29,5 @@ typedef struct noffHeader {
                          * should be zero'ed before use
                          */
 } NoffHeader;
+
+#endif

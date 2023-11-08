@@ -699,13 +699,33 @@ interrupt.o: ../machine/interrupt.cc /usr/include/stdc-predef.h \
  ../machine/callback.h ../threads/main.h ../threads/kernel.h \
  ../threads/thread.h ../machine/machine.h ../machine/translate.h \
  ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../filesys/filetable.h ../threads/scheduler.h /usr/include/c++/13/queue \
- /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
+ ../filesys/filetable.h ../userprog/noff.h ../threads/scheduler.h \
+ /usr/include/c++/13/queue /usr/include/c++/13/deque \
+ /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/stats.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/stats.h \
  ../threads/alarm.h ../machine/timer.h ../lib/bitmap.h \
  ../threads/stable.h ../threads/sem.h ../threads/ptable.h \
  ../threads/pcb.h
@@ -972,14 +992,33 @@ timer.o: ../machine/timer.cc /usr/include/stdc-predef.h \
  /usr/include/string.h /usr/include/strings.h ../threads/kernel.h \
  ../threads/thread.h ../machine/machine.h ../machine/translate.h \
  ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../filesys/filetable.h ../threads/scheduler.h ../lib/list.h \
- ../lib/list.cc /usr/include/c++/13/queue /usr/include/c++/13/deque \
- /usr/include/c++/13/bits/stl_uninitialized.h \
+ ../filesys/filetable.h ../userprog/noff.h ../threads/scheduler.h \
+ ../lib/list.h ../lib/list.cc /usr/include/c++/13/queue \
+ /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/stats.h ../threads/alarm.h ../lib/bitmap.h \
  ../threads/stable.h ../threads/sem.h ../threads/ptable.h \
  ../threads/pcb.h
@@ -1116,14 +1155,33 @@ console.o: ../machine/console.cc /usr/include/stdc-predef.h \
  /usr/include/string.h /usr/include/strings.h ../threads/kernel.h \
  ../threads/thread.h ../machine/machine.h ../machine/translate.h \
  ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../filesys/filetable.h ../threads/scheduler.h ../lib/list.h \
- ../lib/list.cc /usr/include/c++/13/queue /usr/include/c++/13/deque \
- /usr/include/c++/13/bits/stl_uninitialized.h \
+ ../filesys/filetable.h ../userprog/noff.h ../threads/scheduler.h \
+ ../lib/list.h ../lib/list.cc /usr/include/c++/13/queue \
+ /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/stats.h ../threads/alarm.h ../machine/timer.h ../lib/bitmap.h \
  ../threads/stable.h ../threads/sem.h ../threads/ptable.h \
  ../threads/pcb.h
@@ -1259,14 +1317,34 @@ machine.o: ../machine/machine.cc /usr/include/stdc-predef.h \
  /usr/include/c++/13/bits/istream.tcc /usr/include/c++/13/stdlib.h \
  /usr/include/string.h /usr/include/strings.h ../threads/kernel.h \
  ../threads/thread.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../filesys/filetable.h ../threads/scheduler.h \
- ../lib/list.h ../lib/list.cc /usr/include/c++/13/queue \
- /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
+ ../filesys/openfile.h ../filesys/filetable.h ../userprog/noff.h \
+ ../threads/scheduler.h ../lib/list.h ../lib/list.cc \
+ /usr/include/c++/13/queue /usr/include/c++/13/deque \
+ /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/callback.h ../machine/stats.h ../threads/alarm.h \
  ../machine/timer.h ../lib/bitmap.h ../threads/stable.h ../threads/sem.h \
  ../threads/ptable.h ../threads/pcb.h
@@ -1403,14 +1481,33 @@ mipssim.o: ../machine/mipssim.cc /usr/include/stdc-predef.h \
  ../machine/translate.h ../machine/mipssim.h ../threads/main.h \
  ../threads/kernel.h ../threads/thread.h ../userprog/addrspace.h \
  ../filesys/filesys.h ../filesys/openfile.h ../filesys/filetable.h \
- ../threads/scheduler.h ../lib/list.h ../lib/list.cc \
+ ../userprog/noff.h ../threads/scheduler.h ../lib/list.h ../lib/list.cc \
  /usr/include/c++/13/queue /usr/include/c++/13/deque \
  /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/callback.h ../machine/stats.h ../threads/alarm.h \
  ../machine/timer.h ../lib/bitmap.h ../threads/stable.h ../threads/sem.h \
  ../threads/ptable.h ../threads/pcb.h
@@ -1547,14 +1644,33 @@ translate.o: ../machine/translate.cc /usr/include/stdc-predef.h \
  /usr/include/string.h /usr/include/strings.h ../threads/kernel.h \
  ../threads/thread.h ../machine/machine.h ../machine/translate.h \
  ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../filesys/filetable.h ../threads/scheduler.h ../lib/list.h \
- ../lib/list.cc /usr/include/c++/13/queue /usr/include/c++/13/deque \
- /usr/include/c++/13/bits/stl_uninitialized.h \
+ ../filesys/filetable.h ../userprog/noff.h ../threads/scheduler.h \
+ ../lib/list.h ../lib/list.cc /usr/include/c++/13/queue \
+ /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/callback.h ../machine/stats.h ../threads/alarm.h \
  ../machine/timer.h ../lib/bitmap.h ../threads/stable.h ../threads/sem.h \
  ../threads/ptable.h ../threads/pcb.h
@@ -1691,14 +1807,33 @@ network.o: ../machine/network.cc /usr/include/stdc-predef.h \
  /usr/include/string.h /usr/include/strings.h ../threads/kernel.h \
  ../threads/thread.h ../machine/machine.h ../machine/translate.h \
  ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../filesys/filetable.h ../threads/scheduler.h ../lib/list.h \
- ../lib/list.cc /usr/include/c++/13/queue /usr/include/c++/13/deque \
- /usr/include/c++/13/bits/stl_uninitialized.h \
+ ../filesys/filetable.h ../userprog/noff.h ../threads/scheduler.h \
+ ../lib/list.h ../lib/list.cc /usr/include/c++/13/queue \
+ /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/stats.h ../threads/alarm.h ../machine/timer.h ../lib/bitmap.h \
  ../threads/stable.h ../threads/sem.h ../threads/ptable.h \
  ../threads/pcb.h
@@ -1835,14 +1970,34 @@ disk.o: ../machine/disk.cc /usr/include/stdc-predef.h ../lib/copyright.h \
  /usr/include/string.h /usr/include/strings.h ../threads/main.h \
  ../threads/kernel.h ../threads/thread.h ../machine/machine.h \
  ../machine/translate.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../filesys/filetable.h ../threads/scheduler.h \
- ../lib/list.h ../lib/list.cc /usr/include/c++/13/queue \
- /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
+ ../filesys/openfile.h ../filesys/filetable.h ../userprog/noff.h \
+ ../threads/scheduler.h ../lib/list.h ../lib/list.cc \
+ /usr/include/c++/13/queue /usr/include/c++/13/deque \
+ /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/stats.h ../threads/alarm.h ../machine/timer.h ../lib/bitmap.h \
  ../threads/stable.h ../threads/sem.h ../threads/ptable.h \
  ../threads/pcb.h
@@ -1980,14 +2135,33 @@ alarm.o: ../threads/alarm.cc /usr/include/stdc-predef.h \
  /usr/include/string.h /usr/include/strings.h ../threads/kernel.h \
  ../threads/thread.h ../machine/machine.h ../machine/translate.h \
  ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../filesys/filetable.h ../threads/scheduler.h ../lib/list.h \
- ../lib/list.cc /usr/include/c++/13/queue /usr/include/c++/13/deque \
- /usr/include/c++/13/bits/stl_uninitialized.h \
+ ../filesys/filetable.h ../userprog/noff.h ../threads/scheduler.h \
+ ../lib/list.h ../lib/list.cc /usr/include/c++/13/queue \
+ /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/stats.h ../lib/bitmap.h ../threads/stable.h ../threads/sem.h \
  ../threads/ptable.h ../threads/pcb.h
 kernel.o: ../threads/kernel.cc /usr/include/stdc-predef.h \
@@ -2122,14 +2296,34 @@ kernel.o: ../threads/kernel.cc /usr/include/stdc-predef.h \
  /usr/include/string.h /usr/include/strings.h ../threads/main.h \
  ../threads/kernel.h ../threads/thread.h ../machine/machine.h \
  ../machine/translate.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../filesys/filetable.h ../threads/scheduler.h \
- ../lib/list.h ../lib/list.cc /usr/include/c++/13/queue \
- /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
+ ../filesys/openfile.h ../filesys/filetable.h ../userprog/noff.h \
+ ../threads/scheduler.h ../lib/list.h ../lib/list.cc \
+ /usr/include/c++/13/queue /usr/include/c++/13/deque \
+ /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/callback.h ../machine/stats.h ../threads/alarm.h \
  ../machine/timer.h ../lib/bitmap.h ../threads/stable.h ../threads/sem.h \
  ../threads/ptable.h ../threads/pcb.h ../threads/synch.h \
@@ -2268,14 +2462,33 @@ main.o: ../threads/main.cc /usr/include/stdc-predef.h ../lib/copyright.h \
  /usr/include/string.h /usr/include/strings.h ../threads/kernel.h \
  ../threads/thread.h ../machine/machine.h ../machine/translate.h \
  ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../filesys/filetable.h ../threads/scheduler.h ../lib/list.h \
- ../lib/list.cc /usr/include/c++/13/queue /usr/include/c++/13/deque \
- /usr/include/c++/13/bits/stl_uninitialized.h \
+ ../filesys/filetable.h ../userprog/noff.h ../threads/scheduler.h \
+ ../lib/list.h ../lib/list.cc /usr/include/c++/13/queue \
+ /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/callback.h ../machine/stats.h ../threads/alarm.h \
  ../machine/timer.h ../lib/bitmap.h ../threads/stable.h ../threads/sem.h \
  ../threads/ptable.h ../threads/pcb.h
@@ -2411,13 +2624,33 @@ scheduler.o: ../threads/scheduler.cc /usr/include/stdc-predef.h \
  /usr/include/string.h /usr/include/strings.h ../threads/scheduler.h \
  ../lib/list.h ../lib/list.cc ../threads/thread.h ../machine/machine.h \
  ../machine/translate.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../filesys/filetable.h /usr/include/c++/13/queue \
- /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
+ ../filesys/openfile.h ../filesys/filetable.h ../userprog/noff.h \
+ /usr/include/c++/13/queue /usr/include/c++/13/deque \
+ /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../threads/main.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../threads/main.h \
  ../threads/kernel.h ../machine/interrupt.h ../machine/callback.h \
  ../machine/stats.h ../threads/alarm.h ../machine/timer.h ../lib/bitmap.h \
  ../threads/stable.h ../threads/sem.h ../threads/ptable.h \
@@ -2554,15 +2787,34 @@ synch.o: ../threads/synch.cc /usr/include/stdc-predef.h \
  /usr/include/c++/13/bits/istream.tcc /usr/include/c++/13/stdlib.h \
  /usr/include/string.h /usr/include/strings.h ../machine/machine.h \
  ../machine/translate.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../filesys/filetable.h ../lib/list.h \
- ../lib/debug.h ../lib/list.cc ../threads/main.h ../threads/kernel.h \
- ../threads/scheduler.h /usr/include/c++/13/queue \
+ ../filesys/openfile.h ../filesys/filetable.h ../userprog/noff.h \
+ ../lib/list.h ../lib/debug.h ../lib/list.cc ../threads/main.h \
+ ../threads/kernel.h ../threads/scheduler.h /usr/include/c++/13/queue \
  /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/callback.h ../machine/stats.h ../threads/alarm.h \
  ../machine/timer.h ../lib/bitmap.h ../threads/stable.h ../threads/sem.h \
  ../threads/ptable.h ../threads/pcb.h
@@ -2699,14 +2951,34 @@ synchlist.o: ../threads/synchlist.cc /usr/include/stdc-predef.h \
  /usr/include/string.h /usr/include/strings.h ../lib/list.cc \
  ../threads/synch.h ../threads/thread.h ../machine/machine.h \
  ../machine/translate.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../filesys/filetable.h ../threads/main.h \
- ../threads/kernel.h ../threads/scheduler.h /usr/include/c++/13/queue \
- /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
+ ../filesys/openfile.h ../filesys/filetable.h ../userprog/noff.h \
+ ../threads/main.h ../threads/kernel.h ../threads/scheduler.h \
+ /usr/include/c++/13/queue /usr/include/c++/13/deque \
+ /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/callback.h ../machine/stats.h ../threads/alarm.h \
  ../machine/timer.h ../lib/bitmap.h ../threads/stable.h ../threads/sem.h \
  ../threads/ptable.h ../threads/pcb.h ../threads/synchlist.cc
@@ -2841,16 +3113,35 @@ thread.o: ../threads/thread.cc /usr/include/stdc-predef.h \
  /usr/include/c++/13/bits/istream.tcc /usr/include/c++/13/stdlib.h \
  /usr/include/string.h /usr/include/strings.h ../machine/machine.h \
  ../machine/translate.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../filesys/filetable.h ../threads/switch.h \
- ../threads/synch.h ../lib/list.h ../lib/debug.h ../lib/list.cc \
- ../threads/main.h ../threads/kernel.h ../threads/scheduler.h \
- /usr/include/c++/13/queue /usr/include/c++/13/deque \
- /usr/include/c++/13/bits/stl_uninitialized.h \
+ ../filesys/openfile.h ../filesys/filetable.h ../userprog/noff.h \
+ ../threads/switch.h ../threads/synch.h ../lib/list.h ../lib/debug.h \
+ ../lib/list.cc ../threads/main.h ../threads/kernel.h \
+ ../threads/scheduler.h /usr/include/c++/13/queue \
+ /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/callback.h ../machine/stats.h ../threads/alarm.h \
  ../machine/timer.h ../lib/bitmap.h ../threads/stable.h ../threads/sem.h \
  ../threads/ptable.h ../threads/pcb.h
@@ -2986,15 +3277,34 @@ ptable.o: ../threads/ptable.cc /usr/include/stdc-predef.h \
  /usr/include/c++/13/bits/istream.tcc /usr/include/c++/13/stdlib.h \
  /usr/include/string.h /usr/include/strings.h ../machine/machine.h \
  ../machine/translate.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../filesys/filetable.h ../lib/list.h \
- ../lib/debug.h ../lib/list.cc ../threads/main.h ../threads/kernel.h \
- ../threads/scheduler.h /usr/include/c++/13/queue \
+ ../filesys/openfile.h ../filesys/filetable.h ../userprog/noff.h \
+ ../lib/list.h ../lib/debug.h ../lib/list.cc ../threads/main.h \
+ ../threads/kernel.h ../threads/scheduler.h /usr/include/c++/13/queue \
  /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/callback.h ../machine/stats.h ../threads/alarm.h \
  ../machine/timer.h ../lib/bitmap.h ../threads/stable.h ../threads/sem.h \
  ../threads/ptable.h ../threads/pcb.h
@@ -3129,15 +3439,34 @@ pcb.o: ../threads/pcb.cc /usr/include/stdc-predef.h ../threads/synch.h \
  /usr/include/c++/13/bits/istream.tcc /usr/include/c++/13/stdlib.h \
  /usr/include/string.h /usr/include/strings.h ../machine/machine.h \
  ../machine/translate.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../filesys/filetable.h ../lib/list.h \
- ../lib/debug.h ../lib/list.cc ../threads/main.h ../threads/kernel.h \
- ../threads/scheduler.h /usr/include/c++/13/queue \
+ ../filesys/openfile.h ../filesys/filetable.h ../userprog/noff.h \
+ ../lib/list.h ../lib/debug.h ../lib/list.cc ../threads/main.h \
+ ../threads/kernel.h ../threads/scheduler.h /usr/include/c++/13/queue \
  /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/callback.h ../machine/stats.h ../threads/alarm.h \
  ../machine/timer.h ../lib/bitmap.h ../threads/stable.h ../threads/sem.h \
  ../threads/ptable.h ../threads/pcb.h
@@ -3273,15 +3602,34 @@ stable.o: ../threads/stable.cc /usr/include/stdc-predef.h \
  /usr/include/c++/13/bits/istream.tcc /usr/include/c++/13/stdlib.h \
  /usr/include/string.h /usr/include/strings.h ../machine/machine.h \
  ../machine/translate.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../filesys/filetable.h ../lib/list.h \
- ../lib/debug.h ../lib/list.cc ../threads/main.h ../threads/kernel.h \
- ../threads/scheduler.h /usr/include/c++/13/queue \
+ ../filesys/openfile.h ../filesys/filetable.h ../userprog/noff.h \
+ ../lib/list.h ../lib/debug.h ../lib/list.cc ../threads/main.h \
+ ../threads/kernel.h ../threads/scheduler.h /usr/include/c++/13/queue \
  /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/callback.h ../machine/stats.h ../threads/alarm.h \
  ../machine/timer.h ../lib/bitmap.h ../threads/stable.h ../threads/sem.h \
  ../threads/ptable.h ../threads/pcb.h
@@ -3417,15 +3765,34 @@ sem.o: ../threads/sem.cc /usr/include/stdc-predef.h ../threads/sem.h \
  /usr/include/c++/13/bits/istream.tcc /usr/include/c++/13/stdlib.h \
  /usr/include/string.h /usr/include/strings.h ../machine/machine.h \
  ../machine/translate.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../filesys/filetable.h ../lib/list.h \
- ../lib/debug.h ../lib/list.cc ../threads/main.h ../threads/kernel.h \
- ../threads/scheduler.h /usr/include/c++/13/queue \
+ ../filesys/openfile.h ../filesys/filetable.h ../userprog/noff.h \
+ ../lib/list.h ../lib/debug.h ../lib/list.cc ../threads/main.h \
+ ../threads/kernel.h ../threads/scheduler.h /usr/include/c++/13/queue \
  /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/callback.h ../machine/stats.h ../threads/alarm.h \
  ../machine/timer.h ../lib/bitmap.h ../threads/stable.h \
  ../threads/ptable.h ../threads/pcb.h
@@ -3562,18 +3929,36 @@ addrspace.o: ../userprog/addrspace.cc /usr/include/stdc-predef.h \
  /usr/include/string.h /usr/include/strings.h ../threads/kernel.h \
  ../threads/thread.h ../machine/machine.h ../machine/translate.h \
  ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../filesys/filetable.h ../threads/scheduler.h ../lib/list.h \
- ../lib/list.cc /usr/include/c++/13/queue /usr/include/c++/13/deque \
- /usr/include/c++/13/bits/stl_uninitialized.h \
+ ../filesys/filetable.h ../userprog/noff.h ../threads/scheduler.h \
+ ../lib/list.h ../lib/list.cc /usr/include/c++/13/queue \
+ /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/callback.h ../machine/stats.h ../threads/alarm.h \
  ../machine/timer.h ../lib/bitmap.h ../threads/stable.h ../threads/sem.h \
- ../threads/ptable.h ../threads/pcb.h ../userprog/noff.h \
- ../threads/synch.h
+ ../threads/ptable.h ../threads/pcb.h ../threads/synch.h
 exception.o: ../userprog/exception.cc /usr/include/stdc-predef.h \
  ../lib/copyright.h ../threads/main.h ../lib/debug.h ../lib/utility.h \
  ../lib/sysdep.h /usr/include/c++/13/iostream \
@@ -3707,14 +4092,33 @@ exception.o: ../userprog/exception.cc /usr/include/stdc-predef.h \
  /usr/include/string.h /usr/include/strings.h ../threads/kernel.h \
  ../threads/thread.h ../machine/machine.h ../machine/translate.h \
  ../userprog/addrspace.h ../filesys/filesys.h ../filesys/openfile.h \
- ../filesys/filetable.h ../threads/scheduler.h ../lib/list.h \
- ../lib/list.cc /usr/include/c++/13/queue /usr/include/c++/13/deque \
- /usr/include/c++/13/bits/stl_uninitialized.h \
+ ../filesys/filetable.h ../userprog/noff.h ../threads/scheduler.h \
+ ../lib/list.h ../lib/list.cc /usr/include/c++/13/queue \
+ /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/callback.h ../machine/stats.h ../threads/alarm.h \
  ../machine/timer.h ../lib/bitmap.h ../threads/stable.h ../threads/sem.h \
  ../threads/ptable.h ../threads/pcb.h ../userprog/syscall.h \
@@ -3856,15 +4260,34 @@ synchconsole.o: ../userprog/synchconsole.cc /usr/include/stdc-predef.h \
  /usr/include/c++/13/bits/istream.tcc /usr/include/c++/13/stdlib.h \
  /usr/include/string.h /usr/include/strings.h ../machine/machine.h \
  ../machine/translate.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../filesys/filetable.h ../lib/list.h \
- ../lib/debug.h ../lib/list.cc ../threads/main.h ../threads/kernel.h \
- ../threads/scheduler.h /usr/include/c++/13/queue \
+ ../filesys/openfile.h ../filesys/filetable.h ../userprog/noff.h \
+ ../lib/list.h ../lib/debug.h ../lib/list.cc ../threads/main.h \
+ ../threads/kernel.h ../threads/scheduler.h /usr/include/c++/13/queue \
  /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/stats.h ../threads/alarm.h ../machine/timer.h ../lib/bitmap.h \
  ../threads/stable.h ../threads/sem.h ../threads/ptable.h \
  ../threads/pcb.h
@@ -4134,15 +4557,34 @@ filehdr.o: ../filesys/filehdr.cc /usr/include/stdc-predef.h \
  /usr/include/string.h /usr/include/strings.h ../lib/debug.h \
  ../filesys/synchdisk.h ../threads/synch.h ../threads/thread.h \
  ../machine/machine.h ../machine/translate.h ../userprog/addrspace.h \
- ../filesys/filesys.h ../filesys/filetable.h ../lib/list.h ../lib/list.cc \
- ../threads/main.h ../threads/kernel.h ../threads/scheduler.h \
- /usr/include/c++/13/queue /usr/include/c++/13/deque \
- /usr/include/c++/13/bits/stl_uninitialized.h \
+ ../filesys/filesys.h ../filesys/filetable.h ../userprog/noff.h \
+ ../lib/list.h ../lib/list.cc ../threads/main.h ../threads/kernel.h \
+ ../threads/scheduler.h /usr/include/c++/13/queue \
+ /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/stats.h ../threads/alarm.h ../machine/timer.h \
  ../threads/stable.h ../threads/sem.h ../threads/ptable.h \
  ../threads/pcb.h
@@ -4279,14 +4721,33 @@ filesys.o: ../filesys/filesys.cc /usr/include/stdc-predef.h \
  ../lib/utility.h ../filesys/filetable.h ../filesys/filesys.h \
  ../threads/kernel.h ../lib/debug.h ../threads/thread.h \
  ../machine/machine.h ../machine/translate.h ../userprog/addrspace.h \
- ../threads/scheduler.h ../lib/list.h ../lib/list.cc \
+ ../userprog/noff.h ../threads/scheduler.h ../lib/list.h ../lib/list.cc \
  /usr/include/c++/13/queue /usr/include/c++/13/deque \
  /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/callback.h ../machine/stats.h ../threads/alarm.h \
  ../machine/timer.h ../lib/bitmap.h ../threads/stable.h ../threads/sem.h \
  ../threads/ptable.h ../threads/pcb.h ../threads/main.h
@@ -4555,15 +5016,34 @@ synchdisk.o: ../filesys/synchdisk.cc /usr/include/stdc-predef.h \
  /usr/include/c++/13/bits/istream.tcc /usr/include/c++/13/stdlib.h \
  /usr/include/string.h /usr/include/strings.h ../machine/machine.h \
  ../machine/translate.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../filesys/filetable.h ../lib/list.h \
- ../lib/debug.h ../lib/list.cc ../threads/main.h ../threads/kernel.h \
- ../threads/scheduler.h /usr/include/c++/13/queue \
+ ../filesys/openfile.h ../filesys/filetable.h ../userprog/noff.h \
+ ../lib/list.h ../lib/debug.h ../lib/list.cc ../threads/main.h \
+ ../threads/kernel.h ../threads/scheduler.h /usr/include/c++/13/queue \
  /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/stats.h ../threads/alarm.h ../machine/timer.h ../lib/bitmap.h \
  ../threads/stable.h ../threads/sem.h ../threads/ptable.h \
  ../threads/pcb.h
@@ -4701,14 +5181,34 @@ post.o: ../network/post.cc /usr/include/stdc-predef.h ../lib/copyright.h \
  /usr/include/string.h /usr/include/strings.h ../lib/list.cc \
  ../threads/synch.h ../threads/thread.h ../machine/machine.h \
  ../machine/translate.h ../userprog/addrspace.h ../filesys/filesys.h \
- ../filesys/openfile.h ../filesys/filetable.h ../threads/main.h \
- ../threads/kernel.h ../threads/scheduler.h /usr/include/c++/13/queue \
- /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_uninitialized.h \
+ ../filesys/openfile.h ../filesys/filetable.h ../userprog/noff.h \
+ ../threads/main.h ../threads/kernel.h ../threads/scheduler.h \
+ /usr/include/c++/13/queue /usr/include/c++/13/deque \
+ /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h ../machine/interrupt.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/cmath \
+ /usr/include/math.h /usr/include/bits/math-vector.h \
+ /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/13/bits/specfun.h \
+ /usr/include/c++/13/limits /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc ../machine/interrupt.h \
  ../machine/stats.h ../threads/alarm.h ../machine/timer.h ../lib/bitmap.h \
  ../threads/stable.h ../threads/sem.h ../threads/ptable.h \
  ../threads/pcb.h ../threads/synchlist.cc

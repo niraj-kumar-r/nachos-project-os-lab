@@ -420,6 +420,56 @@ void handle_SC_ThreadSleep() {
     return move_program_counter();
 }
 
+void handle_PageFault(int badVAdrr) {
+    kernel->addrLock->P();
+    int vpn = (unsigned)badVAdrr / PageSize;
+    int offset = (unsigned)badVAdrr % PageSize;
+    if (kernel->machine->tlb == NULL) {
+        kernel->machine->pageTable[vpn].virtualPage =
+            vpn;  // for now, virtual page # = phys page #
+        kernel->machine->pageTable[vpn].physicalPage =
+            kernel->gPhysPageBitMap->FindAndSet();
+        // cerr << kernel->machine->pageTable[vpn].physicalPage << endl;
+        kernel->machine->pageTable[vpn].valid = TRUE;
+        kernel->machine->pageTable[vpn].use = FALSE;
+        kernel->machine->pageTable[vpn].dirty = FALSE;
+        kernel->machine->pageTable[vpn].readOnly =
+            FALSE;  // if the code segment was entirely on
+        // a separate page, we could set its
+        // pages to be read-only
+        // xóa các trang này trên memory
+        bzero(&(kernel->machine
+                    ->mainMemory[kernel->machine->pageTable[vpn].physicalPage *
+                                 PageSize]),
+              PageSize);
+        DEBUG(dbgAddr,
+              "phyPage " << kernel->machine->pageTable[vpn].physicalPage);
+
+        if (kernel->currentThread->noffH.code.size > 0) {
+            // for (vpn = 0; vpn < numPages; vpn++)
+            kernel->currentThread->executable->ReadAt(
+                &(kernel->machine->mainMemory[kernel->currentThread->noffH.code
+                                                  .virtualAddr]) +
+                    (kernel->machine->pageTable[vpn].physicalPage * PageSize),
+                PageSize,
+                kernel->currentThread->noffH.code.inFileAddr +
+                    (vpn * PageSize));
+        }
+
+        if (kernel->currentThread->noffH.initData.size > 0) {
+            // for (vpn = 0; vpn < numPages; vpn++)
+            kernel->currentThread->executable->ReadAt(
+                &(kernel->machine->mainMemory[kernel->currentThread->noffH
+                                                  .initData.virtualAddr]) +
+                    (kernel->machine->pageTable[vpn].physicalPage * PageSize),
+                PageSize,
+                kernel->currentThread->noffH.initData.inFileAddr +
+                    (vpn * PageSize));
+        }
+    }
+    kernel->addrLock->V();
+}
+
 void ExceptionHandler(ExceptionType which) {
     int type = kernel->machine->ReadRegister(2);
 
@@ -430,7 +480,12 @@ void ExceptionHandler(ExceptionType which) {
             kernel->interrupt->setStatus(SystemMode);
             DEBUG(dbgSys, "Switch to system mode\n");
             break;
-        case PageFaultException:
+        case PageFaultException: {
+            int badVAdrr = kernel->machine->ReadRegister(BadVAddrReg);
+            DEBUG(dbgSys, "PageFaultException: " << badVAdrr << "\n");
+            handle_PageFault(badVAdrr);
+            break;
+        }
         case ReadOnlyException:
         case BusErrorException:
         case AddressErrorException:
