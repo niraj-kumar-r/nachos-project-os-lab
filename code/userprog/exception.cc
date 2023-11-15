@@ -214,7 +214,7 @@ void handle_SC_PrintStringUC() {
     int length = strlen(buffer);
     // convert to uppercase
     for (int i = 0; i < length; i++) {
-        if (buffer[i] > 'a' && buffer[i] < 'z') {
+        if (buffer[i] >= 'a' && buffer[i] <= 'z') {
             buffer[i] -= 32;
         }
     }
