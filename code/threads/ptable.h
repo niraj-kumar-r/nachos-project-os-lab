@@ -16,6 +16,7 @@ class PTable {
    public:
     PTable(int size);
     ~PTable();
+    int ExecUpdate();
     int ExecUpdate(char* name);
     int ExitUpdate(int ec);
     int JoinUpdate(int id);

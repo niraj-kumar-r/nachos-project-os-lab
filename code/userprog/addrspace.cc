@@ -78,6 +78,49 @@ AddrSpace::AddrSpace() {
     // bzero(kernel->machine->mainMemory, MemorySize);
 }
 
+AddrSpace::AddrSpace(AddrSpace *parent) {
+    int i;
+    unsigned int size;
+
+    kernel->addrLock->P();
+
+    this->numPages = parent->numPages;
+    size = this->numPages * PageSize;
+    ASSERT(numPages <= NumPhysPages);
+
+    if (numPages > kernel->gPhysPageBitMap->NumClear()) {
+        DEBUG(dbgAddr, "Not enough free space");
+        this->numPages = 0;
+        kernel->addrLock->V();
+        return;
+    }
+
+    pageTable = new TranslationEntry[numPages];
+    for (i = 0; i < this->numPages; i++) {
+        pageTable[i].virtualPage = i;
+        pageTable[i].physicalPage = kernel->gPhysPageBitMap->FindAndSet();
+        pageTable[i].valid = TRUE;
+        pageTable[i].use = FALSE;
+        pageTable[i].dirty = FALSE;
+        pageTable[i].readOnly = FALSE;
+        bzero(&(kernel->machine
+                    ->mainMemory[pageTable[i].physicalPage * PageSize]),
+              PageSize);
+        DEBUG(dbgAddr, "phyPage " << pageTable[i].physicalPage);
+    }
+
+    for (i = 0; i < numPages; i++) {
+        memcpy(
+            &(kernel->machine
+                  ->mainMemory[this->pageTable[i].physicalPage * PageSize]),
+            &(kernel->machine
+                  ->mainMemory[parent->pageTable[i].physicalPage * PageSize]),
+            PageSize);
+    }
+
+    kernel->addrLock->V();
+}
+
 //----------------------------------------------------------------------
 // AddrSpace::~AddrSpace
 // 	Dealloate an address space.
@@ -199,8 +242,10 @@ AddrSpace::AddrSpace(char *fileName) {
 void AddrSpace::Execute() {
     kernel->currentThread->space = this;
 
-    this->InitRegisters();  // set the initial register values
-    this->RestoreState();   // load page table register
+    if (!kernel->currentThread->isClone) {
+        this->InitRegisters();  // set the initial register values
+    }
+    this->RestoreState();  // load page table register
 
     kernel->machine->Run();  // jump to the user progam
 
@@ -281,6 +326,7 @@ ExceptionType AddrSpace::Translate(unsigned int vaddr, unsigned int *paddr,
     unsigned int offset = vaddr % PageSize;
 
     if (vpn >= numPages) {
+        cout << "gg1" << endl;
         return AddressErrorException;
     }
 

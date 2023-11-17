@@ -20,6 +20,30 @@ PTable::~PTable() {
     delete bmsem;
 }
 
+int PTable::ExecUpdate() {
+    bmsem->P();
+
+    int index = this->GetFreeSlot();
+
+    if (index < 0) {
+        DEBUG(dbgSys, "\nPTable::Exec :There is no free slot.\n");
+        bmsem->V();
+        return -1;
+    }
+
+    pcb[index] = new PCB(index);
+    char* name = kernel->currentThread->getName();
+    char nullname[20] = {'\0'};
+    pcb[index]->SetFileName(nullname);
+    // kernel->fileSystem->Renew(index);
+
+    pcb[index]->parentID = kernel->currentThread->processID;
+    int pid = pcb[index]->Exec2(name, index);
+
+    bmsem->V();
+    return pid;
+}
+
 int PTable::ExecUpdate(char* name) {
     // Gọi mutex->P(); để giúp tránh tình trạng nạp 2 tiến trình cùng 1 lúc.
     bmsem->P();

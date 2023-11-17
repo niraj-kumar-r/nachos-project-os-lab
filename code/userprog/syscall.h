@@ -51,6 +51,7 @@
 // user defined
 #define SC_PrintStringUC 55
 #define SC_ThreadSleep 56
+#define SC_MyThreadFork 57
 
 #ifndef IN_ASM
 
@@ -219,6 +220,8 @@ int ThreadJoin(ThreadId id);
 void ThreadExit(int ExitCode);
 
 void ThreadSleep(int ticks);
+
+int MyThreadFork(int);
 
 #endif /* IN_ASM */
 

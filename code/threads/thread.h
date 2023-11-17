@@ -91,6 +91,7 @@ class Thread {
     int processID;
     int parrentID;
     int exitStatus;
+    Thread *pThread;
     void FreeSpace() {
         if (space != 0) delete space;
     }
@@ -141,6 +142,7 @@ class Thread {
     void RestoreUserState();  // restore user-level register state
 
     AddrSpace *space;  // User code this thread is running.
+    bool isClone = false;
 };
 
 // external function, dummy routine whose sole job is to call Thread::Print

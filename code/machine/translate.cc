@@ -192,6 +192,7 @@ ExceptionType Machine::Translate(int virtAddr, int *physAddr, int size,
         ((size == 2) && (virtAddr & 0x1))) {
         DEBUG(dbgAddr,
               "Alignment problem at " << virtAddr << ", size " << size);
+        cout << "gg3" << endl;
         return AddressErrorException;
     }
 
@@ -207,6 +208,7 @@ ExceptionType Machine::Translate(int virtAddr, int *physAddr, int size,
     if (tlb == NULL) {  // => page table => vpn is index into table
         if (vpn >= pageTableSize) {
             DEBUG(dbgAddr, "Illegal virtual page # " << virtAddr);
+            cout << "gg2" << endl;
             return AddressErrorException;
         } else if (!pageTable[vpn].valid) {
             DEBUG(dbgAddr, "Invalid virtual page # " << virtAddr);

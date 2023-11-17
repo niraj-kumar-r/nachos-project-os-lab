@@ -20,7 +20,8 @@
 
 class AddrSpace {
    public:
-    AddrSpace();                // Create an address space.
+    AddrSpace();  // Create an address space.
+    AddrSpace(AddrSpace *parent);
     AddrSpace(char *fileName);  // Load a program into addr space from
                                 // a file
     ~AddrSpace();               // De-allocate an address space

@@ -146,13 +146,13 @@ Seek:
 	j	$31
 	.end Seek
 
-        .globl ThreadFork
-        .ent    ThreadFork
+	.globl ThreadFork
+	.ent    ThreadFork
 ThreadFork:
-        addiu $2,$0,SC_ThreadFork
-        syscall
-        j       $31
-        .end ThreadFork
+	addiu $2,$0,SC_ThreadFork
+	syscall
+	j       $31
+	.end ThreadFork
 
         .globl ThreadYield
         .ent    ThreadYield
@@ -289,6 +289,14 @@ ThreadSleep:
 	syscall
 	j	$31
 	.end ThreadSleep
+
+	.globl MyThreadFork
+	.ent	MyThreadFork
+MyThreadFork:
+	addiu $2,$0,SC_MyThreadFork
+	syscall
+	j	$31
+	.end MyThreadFork
 
 /* dummy function to keep gcc happy */
         .globl  __main

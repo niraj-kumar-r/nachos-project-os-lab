@@ -420,6 +420,24 @@ void handle_SC_ThreadSleep() {
     return move_program_counter();
 }
 
+void handle_SC_ThreadFork() {
+    int x = kernel->machine->ReadRegister(4);
+
+    printf("FC  %d %d %d -- %d\n", kernel->currentThread->processID,
+           kernel->currentThread->parrentID, x,
+           kernel->machine->ReadRegister(PCReg));
+
+    if (kernel->currentThread->isClone == true) {
+        kernel->currentThread->isClone = false;
+        kernel->machine->WriteRegister(2, 0);
+    } else {
+        int pid = SysVFork();
+        kernel->machine->WriteRegister(2, pid);
+    }
+
+    return move_program_counter();
+}
+
 void handle_PageFault(int badVAdrr) {
     kernel->addrLock->P();
     int vpn = (unsigned)badVAdrr / PageSize;
@@ -487,10 +505,7 @@ void ExceptionHandler(ExceptionType which) {
         }
         case ReadOnlyException:
         case BusErrorException:
-        case AddressErrorException: {
-            DEBUG(dbgSys, "Error " << which << " occurs\n");
-            break;
-        }
+        case AddressErrorException:
         case OverflowException:
         case IllegalInstrException:
         case NumExceptionTypes:
@@ -548,6 +563,8 @@ void ExceptionHandler(ExceptionType which) {
                     return handle_SC_PrintStringUC();
                 case SC_ThreadSleep:
                     return handle_SC_ThreadSleep();
+                case SC_MyThreadFork:
+                    return handle_SC_ThreadFork();
                 /**
                  * Handle all not implemented syscalls
                  * If you want to write a new handler for syscall:
@@ -573,5 +590,6 @@ void ExceptionHandler(ExceptionType which) {
             cerr << "Unexpected user mode exception" << (int)which << "\n";
             break;
     }
+
     ASSERTNOTREACHED();
 }
