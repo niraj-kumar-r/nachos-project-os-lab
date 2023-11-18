@@ -4126,7 +4126,11 @@ exception.o: ../userprog/exception.cc /usr/include/stdc-predef.h \
  ../machine/console.h ../threads/synch.h ../userprog/ksyscallhelper.h \
  /usr/include/c++/13/cstdint \
  /usr/lib/gcc/x86_64-redhat-linux/13/include/stdint.h \
- /usr/include/stdint.h /usr/include/bits/stdint-uintn.h
+ /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
+ /usr/include/c++/13/fstream /usr/include/c++/13/bits/codecvt.h \
+ /usr/include/c++/13/x86_64-redhat-linux/bits/basic_file.h \
+ /usr/include/c++/13/x86_64-redhat-linux/bits/c++io.h \
+ /usr/include/c++/13/bits/fstream.tcc
 synchconsole.o: ../userprog/synchconsole.cc /usr/include/stdc-predef.h \
  ../lib/copyright.h ../userprog/synchconsole.h ../lib/utility.h \
  ../machine/callback.h ../machine/console.h ../threads/synch.h \

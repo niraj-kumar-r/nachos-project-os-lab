@@ -7,4 +7,4 @@
 
 #include "syscall.h"
 
-int main() { PrintNum(ReadNum()); }
+int main() { PrintNum((unsigned int)8 / (unsigned int)0); }

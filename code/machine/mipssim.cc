@@ -220,6 +220,10 @@ void Machine::OneInstruction(Instruction *instr) {
             if (registers[instr->rt] == 0) {
                 registers[LoReg] = 0;
                 registers[HiReg] = 0;
+                // cout << "Got divide by zero exception\n";
+                RaiseException(IllegalInstrException, 1);
+                // while catching use type 8
+                return;
             } else {
                 registers[LoReg] = registers[instr->rs] / registers[instr->rt];
                 registers[HiReg] = registers[instr->rs] % registers[instr->rt];
@@ -232,6 +236,10 @@ void Machine::OneInstruction(Instruction *instr) {
             if (rt == 0) {
                 registers[LoReg] = 0;
                 registers[HiReg] = 0;
+                // cout << "Got divide by zero exception\n";
+                RaiseException(IllegalInstrException, 1);
+                // while catching use type 8
+                return;
             } else {
                 tmp = rs / rt;
                 registers[LoReg] = (int)tmp;

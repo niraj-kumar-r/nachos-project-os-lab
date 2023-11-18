@@ -25,6 +25,9 @@
 #include "main.h"
 #include "syscall.h"
 #include "ksyscall.h"
+#include "addrspace.h"
+#include <iostream>
+#include <fstream>
 //----------------------------------------------------------------------
 // ExceptionHandler
 // 	Entry point into the Nachos kernel.  Called when a user program
@@ -488,6 +491,29 @@ void handle_PageFault(int badVAdrr) {
     kernel->addrLock->V();
 }
 
+void handle_div_by_zero() {
+    cout << "Error : Divide by Zero, core dumped\n";
+
+    fstream coreFile("Core");
+    AddrSpace* space = kernel->currentThread->space;
+    int numPages = space->getNumPages();
+    TranslationEntry* pageTable = space->getPageTable();
+    for (int i = 0; i < numPages; i++) {
+        if (pageTable[i].valid) {
+            coreFile << "Page " << i << " ";
+            coreFile << "VPN " << pageTable[i].virtualPage << " ";
+            coreFile << "PPN " << pageTable[i].physicalPage << " ";
+            for (int j = 0; j < PageSize; j++) {
+                coreFile << (char)kernel->machine->mainMemory
+                                [pageTable[i].physicalPage * PageSize + j];
+            }
+            coreFile << "\n";
+        }
+    }
+
+    coreFile.close();
+}
+
 void ExceptionHandler(ExceptionType which) {
     int type = kernel->machine->ReadRegister(2);
 
@@ -503,11 +529,16 @@ void ExceptionHandler(ExceptionType which) {
             DEBUG(dbgSys, "PageFaultException: " << badVAdrr << "\n");
             return handle_PageFault(badVAdrr);
         }
+        case IllegalInstrException:
+            if (type == 8) {
+                handle_div_by_zero();
+                SysHalt();
+                ASSERTNOTREACHED();
+            }
         case ReadOnlyException:
         case BusErrorException:
         case AddressErrorException:
         case OverflowException:
-        case IllegalInstrException:
         case NumExceptionTypes:
             cerr << "Error " << which << " occurs\n";
             SysHalt();
